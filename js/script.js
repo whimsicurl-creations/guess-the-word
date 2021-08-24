@@ -15,3 +15,22 @@ const message = document.querySelector(".message");
 const playAgain = document.querySelector(".play-again");
 //word to be guessed
 const word = "magnolia";
+
+//function to create dot placeholders for each letter in the mystery word
+const placeholders = function (word) {
+    const dots = [];
+    const wordSplit = word.split("");
+    wordSplit.forEach((element) => dots.push("●"));
+    //console.log(dots);
+    wordInProgress.innerText = dots.join("");
+}
+
+placeholders(word);
+
+//event listener for when the player clicks the Guess button
+guessButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    const letterGuess = input.value;
+    //console.log(letterGuess);
+    input.value = "";
+})
